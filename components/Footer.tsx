@@ -36,7 +36,7 @@ const Footer = () => {
 
                     <div className="mt-4 md:mt-0">
                         <p className="text-center text-sm text-gray-400">
-                            &copy; {new Date().getFullYear()} Your Company Name. All rights reserved.
+                            &copy; {new Date().getFullYear()} 2024 EPZ Inc. All rights reserved.
                         </p>
                     </div>
                 </div>

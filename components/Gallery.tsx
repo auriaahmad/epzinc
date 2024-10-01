@@ -29,8 +29,7 @@ const Gallery: React.FC<GalleryProps> = ({ title, date, media }) => {
 
   return (
     <div className="mb-6">
-      {/* <h2 className="text-xl font-bold">{title}</h2>
-      {date && <p className="text-gray-500">{date}</p>} */}
+      {/* <h2 className="text-xl font-bold">{title}</h2y */}
       <div className="relative w-full h-80 overflow-hidden">
         {/* Maintain original aspect ratio */}
         {media[currentMediaIndex].type === 'image' ? (

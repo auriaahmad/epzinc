@@ -21,7 +21,7 @@ const ContactPage = () => {
                     </div>
 
                     {/* Flex Container for Two Sections */}
-                    <div className="flex flex-col lg:flex-row w-full max-w-6xl mx-auto p-8 space-y-8 lg:space-y-0 lg:space-x-8">
+                    <div className="flex gap-x-36 flex-col lg:flex-row w-full max-w-6xl mx-auto p-8 space-y-8 lg:space-y-0 lg:space-x-8">
                         {/* Right Side: Contact Form */}
                         <div className="p-6 rounded-lg shadow-md w-full lg:w-3/5 bg-transparent order-1 lg:order-2">
                             <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">Contact Us</h2>
@@ -85,8 +85,8 @@ const ContactPage = () => {
                         </div>
 
                         {/* Left Side: Contact Info */}
-                        <div className="flex flex-col w-full lg:w-2/5 p-6 rounded-lg shadow-md bg-transparent order-2 lg:order-1">
-                            <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+                        <div className="flex flex-col w-full lg:w-2/5 p-6  bg-transparent order-2 lg:order-1">
+                            {/* <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2> */}
 
                             <div className="flex items-center mb-4">
                                 <LocationOn className="text-blue-500 mr-2" />
