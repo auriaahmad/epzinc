@@ -1,9 +1,23 @@
 // pages/about.tsx
 
-import Layout from "@/components/Layout"; // Adjust the import based on your layout component structure
+import Layout from "@/components/Layout";
 import ProductSection from "@/components/ProductSection";
 import Link from "next/link";
 import GlowButton from "@/components/GlowButton";
+import Image from "next/image";
+
+
+// Import Material Icons
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import NetworkCheckIcon from '@mui/icons-material/NetworkCheck';
+import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
+import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
+import DirectionsBoatIcon from '@mui/icons-material/DirectionsBoat';
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+import Agriculture from "@mui/icons-material/Agriculture";
+// import EcoIcon from '@mui/icons-material/Eco';
+import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 
 const AboutPage = () => {
   return (
@@ -12,9 +26,11 @@ const AboutPage = () => {
 
         {/* Header Section */}
         <header className="bg-blue-600 text-white w-full p-10">
+
           <h1 className="text-4xl font-bold text-center">About Us</h1>
           <p className="text-center mt-2">Committed to Quality and Excellence</p>
         </header>
+        
 
         {/* Main Content Section */}
         <div className="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-md mt-8">
@@ -22,6 +38,31 @@ const AboutPage = () => {
           <p className="text-gray-700 mb-4">
             EPZ, Inc. is committed to providing the best quality and service to our customers. For over 25 years, EPZ, Inc. has been delivering high-quality, fast turnaround metal finishing that meets and exceeds our customer's requirements. Our team consists of Platers with 40 years of experience, including those who have been in the industry since 1980.
           </p>
+
+          {/* Badges Section */}
+          <div className="flex justify-center items-center space-x-6 mb-6">
+            <Image
+              src="/images/badges/1.webp"
+              alt="Badge 1"
+              width={150}
+              height={150}
+              className="object-contain"
+            />
+            <Image
+              src="/images/badges/2.webp"
+              alt="Badge 2"
+              width={150}
+              height={150}
+              className="object-contain"
+            />
+            <Image
+              src="/images/badges/3.webp"
+              alt="Badge 3"
+              width={150}
+              height={150}
+              className="object-contain"
+            />
+          </div>
 
           {/* Buttons Container */}
           <div className="flex flex-col items-center my-6">
@@ -43,16 +84,43 @@ const AboutPage = () => {
           </p>
 
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Industries We Serve</h2>
-          <ul className="list-disc list-inside text-gray-700 mb-4">
-            <li>Medical Equipment</li>
-            <li>Government Hardware</li>
-            <li>Telecommunications Equipment</li>
-            <li>Aerospace and Defense</li>
-            <li>Electronics Equipment</li>
-            <li>Marine Equipment</li>
-            <li>Food Equipment</li>
-            <li>Agriculture Equipment</li>
-            <li>Oil & Gas Hardware</li>
+          <ul className="list-none space-y-4 text-gray-700 mb-4">
+            <li className="flex items-center space-x-3">
+              <MedicalServicesIcon className="text-blue-500 w-6 h-6" />
+              <span>Medical Equipment</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <AccountBalanceIcon className="text-blue-500 w-6 h-6" />
+              <span>Government Hardware</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <NetworkCheckIcon className="text-blue-500 w-6 h-6" />
+              <span>Telecommunications Equipment</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <MilitaryTechIcon className="text-blue-500 w-6 h-6" />
+              <span>Aerospace and Defense</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <DevicesOtherIcon className="text-blue-500 w-6 h-6" />
+              <span>Electronics Equipment</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <DirectionsBoatIcon className="text-blue-500 w-6 h-6" />
+              <span>Marine Equipment</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <RestaurantMenuIcon className="text-blue-500 w-6 h-6" />
+              <span>Food Equipment</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <Agriculture className="text-blue-500 w-6 h-6" />
+              <span>Agriculture Equipment</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <LocalGasStationIcon className="text-blue-500 w-6 h-6" />
+              <span>Oil & Gas Hardware</span>
+            </li>
           </ul>
           <div className="flex flex-col items-center my-6">
             <Link href="/contact" passHref>
@@ -73,9 +141,17 @@ const AboutPage = () => {
             <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
               {/* Team Member 1 */}
               <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                  <img className="w-full h-48 object-cover rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://via.placeholder.com/150" alt="Guillermo Gutierrez Avatar" />
-                </a>
+                <div className="relative w-full h-48 sm:w-48 sm:h-48 flex-shrink-0">
+                  <Image
+                    className="object-cover rounded-t-lg sm:rounded-none sm:rounded-l-lg"
+                    src="/images/team/1.jpeg" // Path to image1.jpeg
+                    alt="Guillermo Gutierrez Avatar"
+                    layout="fill" // For Next.js 12 or earlier
+                    objectFit="cover" // Ensure the image covers the container
+                    objectPosition="top" // Prevent head cropping
+                    priority={true} // Optional: Load this image with high priority
+                  />
+                </div>
                 <div className="p-5">
                   <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                     <a href="#">Guillermo Gutierrez</a>
@@ -87,9 +163,17 @@ const AboutPage = () => {
 
               {/* Team Member 2 */}
               <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                  <img className="w-full h-48 object-cover rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://via.placeholder.com/150" alt="Raza Khalid Avatar" />
-                </a>
+                <div className="relative w-full h-48 sm:w-48 sm:h-48 flex-shrink-0">
+                  <Image
+                    className="object-cover rounded-t-lg sm:rounded-none sm:rounded-l-lg"
+                    src="/images/team/4.jpeg" // Path to image4.jpeg
+                    alt="Raza Khalid Avatar"
+                    layout="fill" // For Next.js 12 or earlier
+                    objectFit="cover" // Ensure the image covers the container
+                    objectPosition="top" // Prevent head cropping
+                    priority={true} // Optional: Load this image with high priority
+                  />
+                </div>
                 <div className="p-5">
                   <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                     <a href="#">Raza Khalid</a>
@@ -101,9 +185,17 @@ const AboutPage = () => {
 
               {/* Team Member 3 */}
               <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                  <img className="w-full h-48 object-cover rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://via.placeholder.com/150" alt="Ali Manesh Avatar" />
-                </a>
+                <div className="relative w-full h-48 sm:w-48 sm:h-48 flex-shrink-0">
+                  <Image
+                    className="object-cover rounded-t-lg sm:rounded-none sm:rounded-l-lg"
+                    src="/images/team/2.jpeg" // Path to image2.jpeg
+                    alt="Ali Manesh Avatar"
+                    layout="fill" // For Next.js 12 or earlier
+                    objectFit="cover" // Ensure the image covers the container
+                    objectPosition="top" // Prevent head cropping
+                    priority={true} // Optional: Load this image with high priority
+                  />
+                </div>
                 <div className="p-5">
                   <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                     <a href="#">Ali Manesh</a>
@@ -115,9 +207,17 @@ const AboutPage = () => {
 
               {/* Team Member 4 */}
               <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                  <img className="w-full h-48 object-cover rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://via.placeholder.com/150" alt="Mojtaba Askari Avatar" />
-                </a>
+                <div className="relative w-full h-48 sm:w-48 sm:h-48 flex-shrink-0">
+                  <Image
+                    className="object-cover rounded-t-lg sm:rounded-none sm:rounded-l-lg"
+                    src="/images/team/3.jpeg" // Path to image3.jpeg
+                    alt="Mojtaba Askari Avatar"
+                    layout="fill" // For Next.js 12 or earlier
+                    objectFit="cover" // Ensure the image covers the container
+                    objectPosition="top" // Prevent head cropping
+                    priority={true} // Optional: Load this image with high priority
+                  />
+                </div>
                 <div className="p-5">
                   <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                     <a href="#">Mojtaba Askari</a>

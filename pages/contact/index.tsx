@@ -82,9 +82,6 @@ const ContactPage = () => {
                                 </button>
                             </form>
 
-                            <p className="mt-4 text-sm text-center text-gray-600">
-                                Need help? <Link href="/auth/signup" className="text-blue-500">Create an account</Link>
-                            </p>
                         </div>
 
                         {/* Left Side: Contact Info */}

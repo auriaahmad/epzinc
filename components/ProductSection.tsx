@@ -7,10 +7,13 @@ const ProductSection = () => {
 
     return (
         <section className="relative bg-white">
-            <div className="mx-auto max-w-7xl pb-8">
-                <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl text-center mb-8 pt-8">
-                    Companies We Serve 
-                </h2>
+            <div className="mx-auto max-w-7xl py-8">
+                <div className="max-w-screen-xl mx-auto px-4 text-center mb-12">
+                    <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Companies We Serve</h2>
+                    <p className="text-xl text-gray-500">
+                        UR PRODUCTS ARE BEING USED BY COMPANIES SUCH AS:
+                    </p>
+                </div>
                 <div className="overflow-hidden">
                     <div className="flex animate-carousel space-x-6">
                         {/* Create a set of images for seamless scrolling */}

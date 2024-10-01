@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import Link from "next/link"; // Import Link from next/router
 import ProductSection from "@/components/ProductSection";
 import GlowButton from "@/components/GlowButton"; // Import the GlowButton component
+import IndustriesList from "@/components/IndustriesList";
 
 const Home = () => {
     return (
@@ -74,6 +75,7 @@ const Home = () => {
                     </div>
                 </main>
             </div>
+            <IndustriesList />
             <ProductSection />
         </Layout>
     );

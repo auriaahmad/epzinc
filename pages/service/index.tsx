@@ -69,6 +69,9 @@ const Services = () => {
                 Our Services
               </h1>
             </div>
+            <p className="mt-4 text-sm text-center text-gray-600">
+              Need help? <Link href="/contact" className="text-blue-500">Contact Us</Link>
+            </p>
             <div className="space-y-6 border-l-2 border-dashed">
 
               {/* Search Bar with Label and Icon */}
