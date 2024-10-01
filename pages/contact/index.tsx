@@ -4,6 +4,7 @@ import Layout from "@/components/Layout"; // Ensure the correct path
 import Link from "next/link";
 import { Phone, Email, LocationOn } from '@mui/icons-material'; // Material Icons
 import GlowButton from "@/components/GlowButton";
+
 const ContactPage = () => {
     return (
         <Layout>
@@ -81,7 +82,6 @@ const ContactPage = () => {
                                     Submit
                                 </button>
                             </form>
-
                         </div>
 
                         {/* Left Side: Contact Info */}
@@ -95,13 +95,20 @@ const ContactPage = () => {
 
                             <div className="flex items-center mb-4">
                                 <Phone className="text-blue-500 mr-2" />
-                                <p className="text-gray-900">(123) 456-7890</p>
+                                <p className="text-gray-900">(408) 982-9434</p>
+                            </div>
+
+                            <div className="flex items-center mb-4">
+                                <Phone className="text-blue-500 mr-2" />
+                                <p className="text-gray-900">(408) 817-0486</p>
                             </div>
 
                             <div className="flex items-center mb-4">
                                 <Email className="text-blue-500 mr-2" />
-                                <p className="text-gray-900">contact@epzinc.com</p>
+                                <p className="text-gray-900">info@epzinc.com</p>
                             </div>
+
+                            <p className="text-gray-900 mb-4">Monday - Friday: 7am - 7pm</p>
 
                             {/* Embed Google Map */}
                             <div className="mt-6 w-full">
