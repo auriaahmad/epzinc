@@ -30,7 +30,7 @@ const AboutPage = () => {
           <h1 className="text-4xl font-bold text-center">About Us</h1>
           <p className="text-center mt-2">Committed to Quality and Excellence</p>
         </header>
-        
+
 
         {/* Main Content Section */}
         <div className="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-md mt-8">
@@ -40,7 +40,7 @@ const AboutPage = () => {
           </p>
 
           {/* Badges Section */}
-          <div className="flex justify-center items-center space-x-6 mb-6">
+          <div className="flex flex-col sm:flex-row justify-center items-center space-x-0 sm:space-x-6 space-y-6 sm:space-y-0 mb-6">
             <Image
               src="/images/badges/1.webp"
               alt="Badge 1"

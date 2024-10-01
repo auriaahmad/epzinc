@@ -1,6 +1,12 @@
+// components/Navbar.tsx
+
 import { useState } from 'react';
 import Link from 'next/link';
-import { ShoppingCartIcon, XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline';
+import {
+  ShoppingCartIcon,
+  XMarkIcon,
+  Bars3BottomLeftIcon,
+} from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 
 const Navbar = () => {
@@ -10,10 +16,15 @@ const Navbar = () => {
   const isActive = (path: string) => router.pathname === path;
 
   return (
-    <nav className="bg-gray-800 w-full h-16" role="navigation" aria-label="Main Navigation">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 h-full">
+    <nav
+      className="bg-gray-800 w-full h-16 relative"
+      role="navigation"
+      aria-label="Main Navigation"
+    >
+      <div className="w-full mx-auto px-4 custom:px-6 lg:px-8 h-full">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          {/* Mobile Menu Button */}
+          <div className="absolute inset-y-0 left-0 flex items-center custom:hidden">
             <button
               type="button"
               aria-expanded={mobileMenuOpen}
@@ -25,24 +36,40 @@ const Navbar = () => {
               {mobileMenuOpen ? (
                 <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
               ) : (
-                <Bars3BottomLeftIcon className="block h-6 w-6" aria-hidden="true" />
+                <Bars3BottomLeftIcon
+                  className="block h-6 w-6"
+                  aria-hidden="true"
+                />
               )}
             </button>
 
-            <img className="h-8 w-auto ml-4" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company Logo" />
+            <img
+              className="h-8 w-auto ml-4"
+              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+              alt="Your Company Logo"
+            />
           </div>
 
-          <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="hidden sm:block flex-shrink-0">
-              <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company Logo" />
+          {/* Desktop Menu */}
+          <div className="flex-1 flex items-center justify-center custom:items-stretch custom:justify-start">
+            <div className="hidden custom:block flex-shrink-0">
+              <img
+                className="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Your Company Logo"
+              />
             </div>
 
-            <div className="hidden sm:block sm:ml-6">
+            <div className="hidden custom:block custom:ml-6">
               <div className="flex space-x-4">
                 <Link href="/home" legacyBehavior passHref>
                   <a
                     tabIndex={0}
-                    className={`${isActive('/home') ? 'text-white border-b-2 border-blue-500' : 'text-gray-300'} hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                    className={`${
+                      isActive('/home')
+                        ? 'text-white border-b-2 border-blue-500'
+                        : 'text-gray-300'
+                    } hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
                     aria-current={isActive('/home') ? 'page' : undefined}
                   >
                     Home
@@ -51,17 +78,40 @@ const Navbar = () => {
                 <Link href="/service" legacyBehavior passHref>
                   <a
                     tabIndex={0}
-                    className={`${isActive('/service') ? 'text-white border-b-2 border-blue-500' : 'text-gray-300'} hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                    className={`${
+                      isActive('/service')
+                        ? 'text-white border-b-2 border-blue-500'
+                        : 'text-gray-300'
+                    } hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
                     aria-current={isActive('/service') ? 'page' : undefined}
                   >
                     Service
                   </a>
                 </Link>
+                <Link href="/quality" legacyBehavior passHref>
+                  <a
+                    tabIndex={0}
+                    className={`${
+                      isActive('/quality')
+                        ? 'text-white border-b-2 border-blue-500'
+                        : 'text-gray-300'
+                    } hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                    aria-current={isActive('/quality') ? 'page' : undefined}
+                  >
+                    Quality
+                  </a>
+                </Link>
                 <Link href="/quality-engineering" legacyBehavior passHref>
                   <a
                     tabIndex={0}
-                    className={`${isActive('/quality-engineering') ? 'text-white border-b-2 border-blue-500' : 'text-gray-300'} hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
-                    aria-current={isActive('/quality-engineering') ? 'page' : undefined}
+                    className={`${
+                      isActive('/quality-engineering')
+                        ? 'text-white border-b-2 border-blue-500'
+                        : 'text-gray-300'
+                    } hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                    aria-current={
+                      isActive('/quality-engineering') ? 'page' : undefined
+                    }
                   >
                     Quality Engineering/Fabrication
                   </a>
@@ -69,7 +119,11 @@ const Navbar = () => {
                 <Link href="/for-sale" legacyBehavior passHref>
                   <a
                     tabIndex={0}
-                    className={`${isActive('/for-sale') ? 'text-white border-b-2 border-blue-500' : 'text-gray-300'} hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                    className={`${
+                      isActive('/for-sale')
+                        ? 'text-white border-b-2 border-blue-500'
+                        : 'text-gray-300'
+                    } hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
                     aria-current={isActive('/for-sale') ? 'page' : undefined}
                   >
                     For Sale
@@ -78,7 +132,11 @@ const Navbar = () => {
                 <Link href="/contact" legacyBehavior passHref>
                   <a
                     tabIndex={0}
-                    className={`${isActive('/contact') ? 'text-white border-b-2 border-blue-500' : 'text-gray-300'} hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                    className={`${
+                      isActive('/contact')
+                        ? 'text-white border-b-2 border-blue-500'
+                        : 'text-gray-300'
+                    } hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
                     aria-current={isActive('/contact') ? 'page' : undefined}
                   >
                     Contact Us
@@ -87,7 +145,11 @@ const Navbar = () => {
                 <Link href="/more" legacyBehavior passHref>
                   <a
                     tabIndex={0}
-                    className={`${isActive('/more') ? 'text-white border-b-2 border-blue-500' : 'text-gray-300'} hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                    className={`${
+                      isActive('/more')
+                        ? 'text-white border-b-2 border-blue-500'
+                        : 'text-gray-300'
+                    } hover:text-white px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white`}
                     aria-current={isActive('/more') ? 'page' : undefined}
                   >
                     More
@@ -97,7 +159,8 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          {/* Right Side (Cart, Login, Signup) */}
+          <div className="absolute inset-y-0 right-0 flex items-center pr-2 custom:static custom:inset-auto custom:ml-6 custom:pr-0">
             <button
               type="button"
               className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -128,14 +191,25 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden" id="mobile-menu" role="menu" aria-label="Mobile Navigation">
+        <div
+          className="custom:hidden bg-gray-800 text-white absolute top-16 left-0 w-full z-50"
+          id="mobile-menu"
+          role="menu"
+          aria-label="Mobile Navigation"
+        >
           <div className="space-y-1 px-2 pb-3 pt-2">
             <Link href="/home" legacyBehavior passHref>
               <a
                 tabIndex={0}
-                className={`${isActive('/home') ? 'bg-gray-900 text-white' : 'text-gray-300'} block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                className={`${
+                  isActive('/home')
+                    ? 'bg-gray-900 text-white'
+                    : 'text-gray-300'
+                } block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
                 aria-current={isActive('/home') ? 'page' : undefined}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </a>
@@ -143,17 +217,43 @@ const Navbar = () => {
             <Link href="/service" legacyBehavior passHref>
               <a
                 tabIndex={0}
-                className={`${isActive('/service') ? 'bg-gray-900 text-white' : 'text-gray-300'} block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                className={`${
+                  isActive('/service')
+                    ? 'bg-gray-900 text-white'
+                    : 'text-gray-300'
+                } block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
                 aria-current={isActive('/service') ? 'page' : undefined}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Service
+              </a>
+            </Link>
+            <Link href="/quality" legacyBehavior passHref>
+              <a
+                tabIndex={0}
+                className={`${
+                  isActive('/quality')
+                    ? 'bg-gray-900 text-white'
+                    : 'text-gray-300'
+                } block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                aria-current={isActive('/quality') ? 'page' : undefined}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Quality
               </a>
             </Link>
             <Link href="/quality-engineering" legacyBehavior passHref>
               <a
                 tabIndex={0}
-                className={`${isActive('/quality-engineering') ? 'bg-gray-900 text-white' : 'text-gray-300'} block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
-                aria-current={isActive('/quality-engineering') ? 'page' : undefined}
+                className={`${
+                  isActive('/quality-engineering')
+                    ? 'bg-gray-900 text-white'
+                    : 'text-gray-300'
+                } block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                aria-current={
+                  isActive('/quality-engineering') ? 'page' : undefined
+                }
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Quality Engineering/Fabrication
               </a>
@@ -161,8 +261,13 @@ const Navbar = () => {
             <Link href="/for-sale" legacyBehavior passHref>
               <a
                 tabIndex={0}
-                className={`${isActive('/for-sale') ? 'bg-gray-900 text-white' : 'text-gray-300'} block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                className={`${
+                  isActive('/for-sale')
+                    ? 'bg-gray-900 text-white'
+                    : 'text-gray-300'
+                } block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
                 aria-current={isActive('/for-sale') ? 'page' : undefined}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 For Sale
               </a>
@@ -170,8 +275,13 @@ const Navbar = () => {
             <Link href="/contact" legacyBehavior passHref>
               <a
                 tabIndex={0}
-                className={`${isActive('/contact') ? 'bg-gray-900 text-white' : 'text-gray-300'} block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                className={`${
+                  isActive('/contact')
+                    ? 'bg-gray-900 text-white'
+                    : 'text-gray-300'
+                } block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
                 aria-current={isActive('/contact') ? 'page' : undefined}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Contact Us
               </a>
@@ -179,8 +289,13 @@ const Navbar = () => {
             <Link href="/more" legacyBehavior passHref>
               <a
                 tabIndex={0}
-                className={`${isActive('/more') ? 'bg-gray-900 text-white' : 'text-gray-300'} block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
+                className={`${
+                  isActive('/more')
+                    ? 'bg-gray-900 text-white'
+                    : 'text-gray-300'
+                } block rounded-md px-3 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-white`}
                 aria-current={isActive('/more') ? 'page' : undefined}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 More
               </a>

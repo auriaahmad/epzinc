@@ -1,3 +1,4 @@
+// tailwind.config.js
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -12,8 +13,13 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        // Define your custom breakpoint at 947px
+        'custom': '947px',
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
