@@ -34,7 +34,7 @@ const Home = () => {
     <Layout>
       <div className="bg-white min-h-screen flex items-center justify-center relative">
         {/* Left screwdriver image */}
-        <header className="absolute left-[14%] top-[42%] transform -translate-y-1/2 z-0 hidden md:block">
+        <header className="absolute -rotate-12 left-[8%] top-[30%] transform -translate-y-1/2 z-0 hidden md:block">
           <img
             src="/images/home/screwdriver.png"
             alt="Yellow screwdriver"

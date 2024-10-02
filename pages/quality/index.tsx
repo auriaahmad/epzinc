@@ -3,6 +3,9 @@ import ImageSlider from "@/components/ImageSlider";
 import IndustriesList from "@/components/IndustriesList";
 import Image from "next/image";
 import Card from "@/components/Card";
+import GeneralList from "@/components/GeneralList";
+import GlowButton from "@/components/GlowButton";
+import Link from "next/link";
 
 // Icons imports for the points
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
@@ -21,6 +24,14 @@ const Quality = () => {
     { src: '/images/quality/certificates/1.pdf', label: 'Certificate 1', thumbnail: '/images/quality/certificates/1.webp' },
     { src: '/images/quality/certificates/2.pdf', label: 'Certificate 2', thumbnail: '/images/quality/certificates/2.webp' },
     { src: '/images/quality/certificates/3.pdf', label: 'Certificate 3', thumbnail: '/images/quality/certificates/3.webp' },
+  ];
+
+  const services = [
+    "Fast and Precise Results.",
+    "Non-Destructive Analysis.",
+    "Multi-functional; variety of layer coating.",
+    "Single Layer Coating, Multiple Layer Coatings.",
+    "Thin coating measurements / Thick coating measurements."
   ];
 
   // Define points to display with their corresponding icons
@@ -79,6 +90,7 @@ const Quality = () => {
               }}
             ></div>
           </div>
+
           <div className="mx-auto max-w-2xl flex flex-col items-center justify-center h-full z-10 mt-12">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl text-center">
               Our Quality
@@ -94,7 +106,7 @@ const Quality = () => {
           </div>
 
           {/* Content centered in viewport */}
-          <div className=" mt-12 flex flex-col sm:flex-row justify-center items-center space-x-0 sm:space-x-6 space-y-6 sm:space-y-0 mb-6">
+          <div className="mt-12 flex flex-col sm:flex-row justify-center items-center space-x-0 sm:space-x-6 space-y-6 sm:space-y-0 mb-6">
             <Image
               src="/images/badges/1.webp"
               alt="Badge 1"
@@ -117,6 +129,7 @@ const Quality = () => {
               className="object-contain"
             />
           </div>
+
           <div className="mt-12">
             <IndustriesList industries={qualityPoints} />
           </div>
@@ -181,7 +194,48 @@ const Quality = () => {
                 </div>
               ))}
             </div>
+            <div className="text-left">
+              <p className="my-6 text-lg text-black">
+                The latest improvement to our Quality Control is the addition of the Hitachi Fluorescent X-ray (XRF) Coating Thickness Gauge FT110A
+                <br />
+                This new device allows us to offer:
+              </p>
+
+              {/* Services and Image Layout */}
+              <div className="my-16 flex flex-col sm:flex-row gap-20 justify-center">
+                <Image
+                  src="/images/quality/styles/1.webp"
+                  alt="style 1"
+                  width={260}
+                  height={260}
+                  className="object-contain relative -top-4"
+                />
+                <GeneralList
+                  items={services} // Pass the original filtered services
+                />
+              </div>
+              <p className="my-6 text-lg text-black">
+                The Hitachi FT110A  provides measurements in accordance with ASTM B568 for Coating Measurements.
+              </p>
+            </div>
           </div>
+          <div className="mb-10 flex items-center justify-center gap-x-6">
+              <Link href="/contact" passHref>
+                <GlowButton>
+                  Contact Us
+                </GlowButton>
+              </Link>
+              <Link href="/more" passHref>
+                <button
+                  className="relative rounded-md text-sm font-semibold leading-6 text-gray-900 transition-transform transform hover:scale-105 focus:outline-none"
+                  aria-label="Learn more about our services"
+                >
+                  Learn more
+                  <span aria-hidden="true">→</span>
+                  <span className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-blue-500 to-indigo-500 scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+                </button>
+              </Link>
+            </div>
         </main>
       </div>
     </Layout>

@@ -1,6 +1,7 @@
 // pages/services.tsx
 
 import Layout from '@/components/Layout';
+import GeneralList from '@/components/GeneralList';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -38,17 +39,6 @@ const Services = () => {
     service.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Function to highlight keywords in the service name
-  const highlightService = (service: string) => {
-    if (!searchQuery) return service;
-    const parts = service.split(new RegExp(`(${searchQuery})`, 'gi'));
-    return parts.map((part, index) =>
-      part.toLowerCase() === searchQuery.toLowerCase() ? (
-        <span key={index} className="bg-sky-300">{part}</span>
-      ) : part
-    );
-  };
-
   return (
     <Layout>
       <div className="bg-white min-h-screen flex items-center justify-center relative">
@@ -72,63 +62,44 @@ const Services = () => {
             <p className="mt-4 text-sm text-center text-gray-600">
               Need help? <Link href="/contact" className="text-blue-500">Contact Us</Link>
             </p>
-            <div className="space-y-6 border-l-2 border-dashed">
 
-              {/* Search Bar with Label and Icon */}
-              <div className="fixed top-20 left-0 w-full z-50">
-                <div className="hidden sm:mb-8 sm:flex sm:flex-col sm:items-center">
-                  <div className="relative w-full max-w-md">
-                    <input
-                      id="search"
-                      type="text"
-                      placeholder="Type to search a Service..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      aria-label="Search services"
-                      className="w-full py-2 pl-10 pr-4 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 rounded-full focus:outline-none"
-                    />
-                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-5 w-5 text-gray-500"
-                      >
-                        <path d="M11 2a9 9 0 100 18 9 9 0 000-18zm0 16a7 7 0 100-14 7 7 0 000 14zm7.707-7.707a1 1 0 00-1.414 0L14 14.586l-2.293-2.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l5-5a1 1 0 000-1.414z" />
-                      </svg>
-                    </span>
-                  </div>
+            {/* Search Bar with Label and Icon */}
+            <div className="fixed top-20 left-0 w-full z-50">
+              <div className="hidden sm:mb-8 sm:flex sm:flex-col sm:items-center">
+                <div className="relative w-full max-w-md">
+                  <input
+                    id="search"
+                    type="text"
+                    placeholder="Type to search a Service..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    aria-label="Search services"
+                    className="w-full py-2 pl-10 pr-4 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 rounded-full focus:outline-none"
+                  />
+                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-5 w-5 text-gray-500"
+                    >
+                      <path d="M11 2a9 9 0 100 18 9 9 0 000-18zm0 16a7 7 0 100-14 7 7 0 000 14zm7.707-7.707a1 1 0 00-1.414 0L14 14.586l-2.293-2.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l5-5a1 1 0 000-1.414z" />
+                    </svg>
+                  </span>
                 </div>
               </div>
-
-              {filteredServices.map((service, index) => (
-                <div key={index} className="relative w-full flex items-center" tabIndex={0} role="button" aria-pressed="false">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-6 w-6 text-blue-500 absolute -left-4 top-1/2 transform -translate-y-1/2"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <div className="ml-8 flex justify-between items-center w-full">
-                    <h4 className="font-bold text-black">{highlightService(service)}</h4>
-                    <Link href="/contact" passHref>
-                      <div className="mt-2 inline-block px-4 py-2 text-sm font-semibold text-white bg-blue-500 rounded hover:bg-blue-600 cursor-pointer">
-                        Get
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              ))}
-              <p className="mt-4 text-sm text-gray-500">
-                EPZ, Inc. provides custom-designed tooling to ensure that rack marks and material damage is minimized, resulting in a consistent High-Quality Finish.
-              </p>
             </div>
+
+            {/* GeneralList Component */}
+            <GeneralList
+              items={filteredServices} // Pass the original filtered services
+              buttonText="Get"
+              buttonLink="/contact"
+              searchQuery={searchQuery} // Pass search query for highlighting
+            />
+            <p className="mt-12 text-sm text-gray-500">
+              EPZ, Inc. provides custom-designed tooling to ensure that rack marks and material damage is minimized, resulting in a consistent High-Quality Finish.
+            </p>
           </main>
         </div>
       </div>
