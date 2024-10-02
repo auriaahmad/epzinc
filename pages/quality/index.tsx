@@ -96,7 +96,7 @@ const Quality = () => {
               Our Quality
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 text-center">
-              Our commitment to the customer is what makes us unique in the plating business. EPZ Inc. employees are dedicated to meeting customers' needs in any way possible. With over 25+ years in business, EPZ Inc. has helped its customers meet high industry standards by delivering High Quality & Fast Turn Around Metal Finishing.
+              Our commitment to the customer is what makes us unique in the plating business. EPZ Inc. employees are dedicated to meeting customers&apos; needs in any way possible. With over 25+ years in business, EPZ Inc. has helped its customers meet high industry standards by delivering High Quality & Fast Turn Around Metal Finishing.
             </p>
           </div>
 
@@ -177,7 +177,7 @@ const Quality = () => {
               Quality Control
             </h1>
             <p className="mt-6 text-lg text-gray-600 text-center">
-              We offer 3 tiers of Quality Control that allow us to tailor to each of our Customer's Requirements.
+              We offer 3 tiers of Quality Control that allow us to tailor to each of our Customer&apos;s Requirements.
             </p>
 
             {/* Cards Container */}

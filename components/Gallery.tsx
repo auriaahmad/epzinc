@@ -1,3 +1,5 @@
+// components/Gallery.tsx
+
 import React, { useEffect, useState } from 'react';
 
 interface MediaItem {
@@ -29,7 +31,8 @@ const Gallery: React.FC<GalleryProps> = ({ title, date, media }) => {
 
   return (
     <div className="mb-6">
-      {/* <h2 className="text-xl font-bold">{title}</h2y */}
+      <h2 className="text-xl font-bold mb-2">{title}</h2>
+      {date && <p className="text-sm text-gray-500 mb-4">{date}</p>}
       <div className="relative w-full h-80 overflow-hidden">
         {/* Maintain original aspect ratio */}
         {media[currentMediaIndex].type === 'image' ? (
@@ -48,7 +51,11 @@ const Gallery: React.FC<GalleryProps> = ({ title, date, media }) => {
       </div>
       <div className="grid grid-cols-5 gap-4 mt-4">
         {media.map((item, index) => (
-          <div key={index} onClick={() => handleThumbnailClick(index)} className="cursor-pointer transition-transform duration-300 transform hover:scale-105">
+          <div
+            key={index}
+            onClick={() => handleThumbnailClick(index)}
+            className="cursor-pointer transition-transform duration-300 transform hover:scale-105"
+          >
             {item.type === 'image' ? (
               <img
                 src={item.src}

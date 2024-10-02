@@ -25,7 +25,7 @@ const ContactPage = () => {
                         {/* Right Side: Contact Form */}
                         <div className="p-6 rounded-lg shadow-md w-full lg:w-3/5 bg-transparent order-1 lg:order-2">
                             <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">Contact Us</h2>
-                            <p className="text-gray-600 text-center mb-4">We'd love to hear from you! Please fill out the form below.</p>
+                            <p className="text-gray-600 text-center mb-4">We&apos;d love to hear from you! Please fill out the form below.</p>
 
                             <form>
                                 <div className="mb-4">
@@ -85,7 +85,7 @@ const ContactPage = () => {
                         </div>
 
                         {/* Left Side: Contact Info */}
-                        <div className="flex flex-col w-full lg:w-2/5 p-6  bg-transparent order-2 lg:order-1">
+                        <div className="flex flex-col w-full lg:w-2/5 p-6 bg-transparent order-2 lg:order-1">
                             {/* <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2> */}
 
                             <div className="flex items-center mb-4">

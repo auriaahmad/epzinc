@@ -36,7 +36,7 @@ const AboutPage = () => {
         <div className="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-md mt-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Who We Are</h2>
           <p className="text-gray-700 mb-4">
-            EPZ, Inc. is committed to providing the best quality and service to our customers. For over 25 years, EPZ, Inc. has been delivering high-quality, fast turnaround metal finishing that meets and exceeds our customer's requirements. Our team consists of Platers with 40 years of experience, including those who have been in the industry since 1980.
+            EPZ, Inc. is committed to providing the best quality and service to our customers. For over 25 years, EPZ, Inc. has been delivering high-quality, fast turnaround metal finishing that meets and exceeds our customer&apos;s requirements. Our team consists of Platers with 40 years of experience, including those who have been in the industry since 1980.
           </p>
 
           {/* Badges Section */}
