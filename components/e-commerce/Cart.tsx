@@ -1,3 +1,4 @@
+// Cart.tsx
 import React, { ReactNode, ReactElement, useState, useEffect, useRef } from 'react';
 import { ShoppingCartIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
 import { PlusCircleIcon, MinusCircleIcon } from '@heroicons/react/24/solid';
@@ -32,6 +33,7 @@ export interface CartProps {
   mode?: 'light' | 'dark';
   showCustomScrollbar?: boolean;
   flipIconHorizontally?: boolean;
+  showStickyHeader?: boolean; // New prop to control sticky header visibility
 }
 
 const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
@@ -57,6 +59,7 @@ const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
     mode = 'light',
     showCustomScrollbar = false,
     flipIconHorizontally = false,
+    showStickyHeader = true, // Default value for sticky header
   } = props;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -116,8 +119,7 @@ const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
     }
   };
 
-  const bgClass =
-    mode === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-800';
+  const bgClass = mode === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-800';
   const textClass = mode === 'dark' ? 'text-gray-300' : 'text-gray-500';
   const hoverClass = mode === 'dark' ? 'hover:text-white' : 'hover:text-gray-800';
   const borderClass = mode === 'dark' ? 'border-gray-600' : 'border-gray-200';
@@ -172,11 +174,13 @@ const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
                 : 'scrollbar-hide'
             } max-h-[60vh] overflow-y-auto`}
           >
-            <div
-              className={`sticky top-0 z-10 ${stickyHeaderClass} p-4 text-lg font-semibold text-center`}
-            >
-              Total: ${calculateTotal().toFixed(2)}
-            </div>
+            {showStickyHeader && (
+              <div
+                className={`sticky top-0 z-10 ${stickyHeaderClass} p-4 text-lg font-semibold text-center`}
+              >
+                Total: ${calculateTotal().toFixed(2)}
+              </div>
+            )}
 
             <div className="p-4">
               {items.length === 0 ? (

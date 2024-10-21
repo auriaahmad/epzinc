@@ -1,17 +1,18 @@
+// TestPage.tsx
 import React, { useState } from 'react';
 import { ShoppingCartIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
 import Cart from '@/components/e-commerce/Cart';
 
 const cartItemsMock = [
-  { id: 1, name: 'Apple iPhone 15', price: 1199, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 2, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 3, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 4, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 5, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 6, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 7, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 8, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 9, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+  { id: 1, name: 'Apple iPhone 15', price: 1199, quantity: 1, imageUrl: '/images/gallery/3/1.webp' },
+  { id: 2, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/gallery/3/1.webp' },
+  { id: 3, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/gallery/3/2.webp' },
+  { id: 4, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/gallery/3/3.webp' },
+  { id: 5, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/gallery/3/4.webp' },
+  { id: 6, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/gallery/3/5.webp' },
+  { id: 7, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/gallery/3/6.webp' },
+  { id: 8, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/gallery/3/7.webp' },
+  { id: 9, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/gallery/3/8.webp' },
 ];
 
 const TestPage = () => {
@@ -25,6 +26,7 @@ const TestPage = () => {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
   const [showCustomScrollbar, setShowCustomScrollbar] = useState(false);
   const [flipIconHorizontally, setFlipIconHorizontally] = useState(true);
+  const [showStickyHeader, setShowStickyHeader] = useState(true); // New state for sticky header
 
   const handleRemoveItem = (id: number) => {
     setCartItems(cartItems.filter(item => item.id !== id));
@@ -58,6 +60,7 @@ const TestPage = () => {
           isDisabled={isDisabled}
           showCustomScrollbar={showCustomScrollbar}
           flipIconHorizontally={flipIconHorizontally}
+          showStickyHeader={showStickyHeader} // Pass the new prop
         />
       </div>
 
@@ -120,6 +123,17 @@ const TestPage = () => {
           </select>
         </div>
 
+        {/* Show Sticky Header Checkbox */}
+        <div className="flex items-center space-x-4 mb-4">
+          <label className="font-semibold text-white">Show Sticky Header:</label>
+          <input
+            type="checkbox"
+            checked={showStickyHeader}
+            onChange={(e) => setShowStickyHeader(e.target.checked)}
+            className="h-4 w-4"
+          />
+        </div>
+
         {/* isDisabled Checkbox */}
         <div className="flex items-center space-x-4 mb-4">
           <label className="font-semibold text-white">Disabled:</label>
@@ -164,8 +178,6 @@ const TestPage = () => {
           />
         </div>
       </div>
-    
-    
     </div>
   );
 };
