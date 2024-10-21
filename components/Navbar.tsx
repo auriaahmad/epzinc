@@ -1,5 +1,20 @@
 // components/Navbar.tsx
 
+import { ShoppingBagIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
+
+const cartItemsMock = [
+  { id: 1, name: 'Apple iPhone 15', price: 1199, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+  { id: 2, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+  { id: 3, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+  { id: 4, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+  { id: 5, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+  { id: 6, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+  { id: 7, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+  { id: 8, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+  { id: 9, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+];
+
+import Cart from './e-commerce/Cart';
 import { useState } from 'react';
 import Link from 'next/link';
 import {
@@ -14,6 +29,26 @@ const Navbar = () => {
   const router = useRouter();
 
   const isActive = (path: string) => router.pathname === path;
+
+  const [cartItems, setCartItems] = useState(cartItemsMock);
+
+  // Handle removing items from the cart
+  const handleRemoveItem = (id: number) => {
+    setCartItems(cartItems.filter(item => item.id !== id));
+  };
+
+  // Handle quantity change
+  const handleQuantityChange = (id: number, newQuantity: number) => {
+    setCartItems(cartItems.map(item =>
+      item.id === id ? { ...item, quantity: newQuantity } : item
+    ));
+  };
+
+  // Handle viewing item (optional functionality)
+  const handleViewItem = (id: number) => {
+    // You can implement the logic to view the item's details here
+    console.log(`View item with id: ${id}`);
+  };
 
   return (
     <nav
@@ -158,7 +193,7 @@ const Navbar = () => {
               className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
               aria-label="View cart"
             >
-              <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+              {/* <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" /> */}
             </button>
 
             <div className="ml-3 flex items-center space-x-4">

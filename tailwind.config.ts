@@ -9,6 +9,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Customize the scrollbar colors
+      scrollbar: {
+        DEFAULT: {
+          track: 'rounded bg-gray-200',
+          thumb: 'rounded bg-gray-400',
+        },
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -19,7 +26,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+    require('tailwind-scrollbar-hide'),
+  ],
 };
 
 export default config;
