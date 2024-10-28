@@ -1,7 +1,6 @@
-// Cart.tsx
 import React, { ReactNode, ReactElement, useState, useEffect, useRef } from 'react';
-import { ShoppingCartIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
-import { PlusCircleIcon, MinusCircleIcon } from '@heroicons/react/24/solid';
+import { ShoppingCartIcon, TrashIcon, EyeIcon, PlusCircleIcon, MinusCircleIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
 
 export interface CartItem {
   id: number;
@@ -33,7 +32,7 @@ export interface CartProps {
   mode?: 'light' | 'dark';
   showCustomScrollbar?: boolean;
   flipIconHorizontally?: boolean;
-  showStickyHeader?: boolean; // New prop to control sticky header visibility
+  showStickyHeader?: boolean;
 }
 
 const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
@@ -59,15 +58,13 @@ const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
     mode = 'light',
     showCustomScrollbar = false,
     flipIconHorizontally = false,
-    showStickyHeader = true, // Default value for sticky header
+    showStickyHeader = true,
   } = props;
 
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleClickOutside = (event: MouseEvent) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -81,7 +78,6 @@ const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
     } else {
       document.removeEventListener('mousedown', handleClickOutside);
     }
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -97,60 +93,40 @@ const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
     }
   };
 
-  const calculateTotal = () => {
-    return items.reduce((total, item) => total + item.price * item.quantity, 0);
-  };
+  const calculateTotal = () => items.reduce((total, item) => total + item.price * item.quantity, 0);
 
   const handleOpen = () => {
-    if (onOpen === 'click' || onOpen === 'both') {
-      toggleDropdown();
-    }
+    if (onOpen === 'click' || onOpen === 'both') toggleDropdown();
   };
 
   const handleMouseEnter = () => {
-    if (onOpen === 'hover' || onOpen === 'both') {
-      setIsOpen(true);
-    }
+    if (onOpen === 'hover' || onOpen === 'both') setIsOpen(true);
   };
 
   const handleMouseLeave = () => {
-    if (onOpen === 'hover' || onOpen === 'both') {
-      setIsOpen(false);
-    }
+    if (onOpen === 'hover' || onOpen === 'both') setIsOpen(false);
   };
 
   const bgClass = mode === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-800';
   const textClass = mode === 'dark' ? 'text-gray-300' : 'text-gray-500';
   const hoverClass = mode === 'dark' ? 'hover:text-white' : 'hover:text-gray-800';
   const borderClass = mode === 'dark' ? 'border-gray-600' : 'border-gray-200';
-  const stickyHeaderClass =
-    mode === 'dark' ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800';
+  const stickyHeaderClass = mode === 'dark' ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800';
 
   return (
-    <div
-      className="relative inline-block"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="relative inline-block" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div ref={dropdownRef}>
         <button
           ref={ref}
           onClick={handleOpen}
           aria-label={ariaLabel}
           aria-expanded={isOpen}
-          className={`inline-flex items-center justify-center p-2 rounded-lg ${
-            isDisabled ? 'cursor-not-allowed' : ''
-          }`}
+          className={`inline-flex items-center justify-center p-2 rounded-lg ${isDisabled ? 'cursor-not-allowed' : ''}`}
           disabled={isDisabled}
         >
-          <span
-            className={`transform transition-transform duration-300 ${
-              flipIconHorizontally ? 'scale-x-[-1]' : ''
-            }`}
-          >
+          <span className={`transform transition-transform duration-300 ${flipIconHorizontally ? 'scale-x-[-1]' : ''}`}>
             {icon}
           </span>
-
           {itemCount > 0 && (
             <span
               className={`absolute ${
@@ -175,9 +151,7 @@ const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
             } max-h-[60vh] overflow-y-auto`}
           >
             {showStickyHeader && (
-              <div
-                className={`sticky top-0 z-10 ${stickyHeaderClass} p-4 text-lg font-semibold text-center`}
-              >
+              <div className={`sticky top-0 z-10 ${stickyHeaderClass} p-4 text-lg font-semibold text-center`}>
                 Total: ${calculateTotal().toFixed(2)}
               </div>
             )}
@@ -190,23 +164,20 @@ const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
                   {items.map((item: CartItem, index) => (
                     <div key={item.id}>
                       <div className="flex flex-col md:flex-row items-center gap-4">
-                        <img
+                        <Image
                           src={item.imageUrl}
                           alt={item.name}
+                          width={96}
+                          height={96}
                           className="w-20 h-20 md:w-24 md:h-24 rounded object-cover"
                         />
 
                         <div className="flex-1 flex flex-col space-y-1 text-sm md:text-base">
-                          <span
-                            className={`font-semibold ${
-                              mode === 'dark' ? 'text-white' : 'text-gray-800'
-                            }`}
-                          >
+                          <span className={`font-semibold ${mode === 'dark' ? 'text-white' : 'text-gray-800'}`}>
                             {item.name}
                           </span>
                           <span className={`${textClass}`}>
-                            ${item.price} x {item.quantity} = $
-                            {(item.price * item.quantity).toFixed(2)}
+                            ${item.price} x {item.quantity} = ${(item.price * item.quantity).toFixed(2)}
                           </span>
                         </div>
 
@@ -261,9 +232,7 @@ const Cart = React.forwardRef<HTMLButtonElement, CartProps>((props, ref) => {
                         </div>
                       </div>
 
-                      {index < items.length - 1 && (
-                        <hr className={`border-t ${borderClass} my-4`} />
-                      )}
+                      {index < items.length - 1 && <hr className={`border-t ${borderClass} my-4`} />}
                     </div>
                   ))}
                 </div>

@@ -1,6 +1,6 @@
 // components/Navbar.tsx
 
-import { ShoppingBagIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
+// import { ShoppingBagIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
 
 const cartItemsMock = [
   { id: 1, name: 'Apple iPhone 15', price: 1199, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
@@ -14,11 +14,11 @@ const cartItemsMock = [
   { id: 9, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
 ];
 
-import Cart from './e-commerce/Cart';
+// import Cart from './e-commerce/Cart';
 import { useState } from 'react';
 import Link from 'next/link';
 import {
-  ShoppingCartIcon,
+  // ShoppingCartIcon,
   XMarkIcon,
   Bars3BottomLeftIcon,
 } from '@heroicons/react/24/outline';
