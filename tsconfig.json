@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-"noUnusedLocals": false,
-    "noUnusedParameters": false,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -16,7 +14,9 @@
     "incremental": true,
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
