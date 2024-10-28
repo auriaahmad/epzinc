@@ -5,7 +5,7 @@ const HeroSection5: React.FC = () => {
   const slides = [
     {
       title: 'Nike React',
-      subtitle: "Rewriting sport's playbook for billions of athletes",
+      subtitle: "Rewriting sport&apos;s playbook for billions of athletes",
       backgroundImage:
         "url('https://images.unsplash.com/photo-1615615228002-890bb61cac6e?q=80&w=1920&auto=format&fit=crop')",
     },

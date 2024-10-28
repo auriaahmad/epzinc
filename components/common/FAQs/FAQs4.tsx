@@ -38,7 +38,7 @@ const FAQs4: React.FC = () => {
                 answer: "Once your team signs up for a subscription plan. This is where we sit down, grab a cup of coffee and dial in the details."
               },
               {
-                question: "How does Preline's pricing work?",
+                question: "How does Preline&apos;s pricing work?",
                 answer: "Our subscriptions are tiered. Understanding the task at hand and ironing out the wrinkles is key."
               },
               {
@@ -47,7 +47,7 @@ const FAQs4: React.FC = () => {
               },
               {
                 question: "How do I get access to a theme I purchased?",
-                answer: "If you lose the link for a theme you purchased, don't panic! We've got you covered."
+                answer: "If you lose the link for a theme you purchased, don&apos;t panic! We&apos;ve got you covered."
               },
               {
                 question: "Upgrade License Type",

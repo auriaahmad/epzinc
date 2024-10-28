@@ -85,7 +85,7 @@ const Blog11: React.FC = () => {
           </div>
           <div className="my-6">
             <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-              Front accounts - let's work together
+              Front accounts - let&apos;s work together
             </h3>
             <p className="mt-5 text-gray-600 dark:text-neutral-400">
               Are you an accountant? Are you a company formation advisor?

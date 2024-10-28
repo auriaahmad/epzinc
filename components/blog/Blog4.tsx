@@ -15,7 +15,7 @@ const Blog5: React.FC = () => {
             <p className="font-semibold text-5xl text-white">43%</p>
             <h3 className="mt-5 font-medium text-lg text-white">Enhancement in Customer Engagement</h3>
             <p className="mt-1 text-neutral-400">
-              With the aim of optimizing customer interactions and boosting brand loyalty, the team at Preline leveraged Mailchimp's powerful tools and expertise to deliver exceptional results.
+              With the aim of optimizing customer interactions and boosting brand loyalty, the team at Preline leveraged Mailchimp&apos;s powerful tools and expertise to deliver exceptional results.
             </p>
           </div>
         </div>
@@ -39,7 +39,7 @@ const Blog5: React.FC = () => {
             <p className="font-semibold text-5xl text-white">20%</p>
             <h3 className="mt-5 font-medium text-lg text-white">Rise in E-commerce</h3>
             <p className="mt-1 text-neutral-400">
-              In collaboration with Shopify, Preline embarked on a mission to revolutionize the e-commerce experience for a fictitious fashion brand, "StyleAura."
+              In collaboration with Shopify, Preline embarked on a mission to revolutionize the e-commerce experience for a fictitious fashion brand, &quot;StyleAura.&quot;
             </p>
           </div>
         </div>
@@ -63,7 +63,7 @@ const Blog5: React.FC = () => {
             <p className="font-semibold text-5xl text-white">12%</p>
             <h3 className="mt-5 font-medium text-lg text-white">Streamlining Development</h3>
             <p className="mt-1 text-neutral-400">
-              With the goal of accelerating project delivery and enhancing collaboration among development teams, Preline leveraged GitLab's comprehensive suite of tools.
+              With the goal of accelerating project delivery and enhancing collaboration among development teams, Preline leveraged GitLab&apos;s comprehensive suite of tools.
             </p>
           </div>
         </div>

@@ -8,7 +8,7 @@ const Blog7: React.FC = () => {
       <h2 className="text-3xl lg:text-4xl text-gray-800 font-bold dark:text-neutral-200">
       Read our latest news</h2>
         <p className="mt-1 text-gray-600 dark:text-neutral-400">
-          We've helped some great companies brand, design and get to market.
+          We&apos;ve helped some great companies brand, design and get to market.
         </p>
       </div>
       {/* End Title Section */}

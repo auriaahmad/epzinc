@@ -31,7 +31,7 @@ const FAQs2: React.FC = () => {
 
       <div>
         <h3 className="text-lg font-semibold text-gray-800 dark:text-neutral-200">
-          How does Preline's pricing work?
+          How does Preline&apos;s pricing work?
         </h3>
         <p className="mt-2 text-gray-600 dark:text-neutral-400">
           Our subscriptions are tiered. Understanding the task at hand and ironing out the wrinkles is key.
@@ -52,7 +52,7 @@ const FAQs2: React.FC = () => {
           Do you offer discounts?
         </h3>
         <p className="mt-2 text-gray-600 dark:text-neutral-400">
-          We've built in discounts at each tier for teams. The time has come to bring those ideas and plans to life.
+          We&apos;ve built in discounts at each tier for teams. The time has come to bring those ideas and plans to life.
         </p>
       </div>
 

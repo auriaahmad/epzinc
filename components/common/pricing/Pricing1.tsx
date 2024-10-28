@@ -19,9 +19,10 @@ const Pricing1: React.FC = () => {
                         className="sr-only peer"
                         id="hs-basic-with-description"
                         defaultChecked
-                        onChange={(e) => {
-                            // You can add any specific action on toggle change here if required
-                        }}
+                        // onChange={(e) => {
+                        //     // You can add any specific action on toggle change here if required
+                        // }
+                    // }
                     />
                     <div className="relative w-12 h-7 bg-gray-300 rounded-full peer-checked:bg-blue-600 transition-colors ease-in-out duration-300">
                         <span className="absolute left-1 top-1 w-5 h-5 bg-gray-400 rounded-full transition-transform duration-300 transform peer-checked:translate-x-5 peer-checked:bg-blue-600"></span>

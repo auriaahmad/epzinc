@@ -2,17 +2,17 @@
 
 // import { ShoppingBagIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
 
-const cartItemsMock = [
-  { id: 1, name: 'Apple iPhone 15', price: 1199, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 2, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 3, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 4, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 5, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 6, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 7, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 8, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-  { id: 9, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
-];
+// const cartItemsMock = [
+//   { id: 1, name: 'Apple iPhone 15', price: 1199, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+//   { id: 2, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+//   { id: 3, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+//   { id: 4, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+//   { id: 5, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+//   { id: 6, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+//   { id: 7, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+//   { id: 8, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+//   { id: 9, name: 'Apple iPad Air', price: 799, quantity: 1, imageUrl: '/images/shop/1/1.webp' },
+// ];
 
 // import Cart from './e-commerce/Cart';
 import { useState } from 'react';
@@ -30,25 +30,25 @@ const Navbar = () => {
 
   const isActive = (path: string) => router.pathname === path;
 
-  const [cartItems, setCartItems] = useState(cartItemsMock);
+  // const [cartItems, setCartItems] = useState(cartItemsMock);
 
   // Handle removing items from the cart
-  const handleRemoveItem = (id: number) => {
-    setCartItems(cartItems.filter(item => item.id !== id));
-  };
+  // const handleRemoveItem = (id: number) => {
+  //   setCartItems(cartItems.filter(item => item.id !== id));
+  // };
 
   // Handle quantity change
-  const handleQuantityChange = (id: number, newQuantity: number) => {
-    setCartItems(cartItems.map(item =>
-      item.id === id ? { ...item, quantity: newQuantity } : item
-    ));
-  };
+  // const handleQuantityChange = (id: number, newQuantity: number) => {
+  //   setCartItems(cartItems.map(item =>
+  //     item.id === id ? { ...item, quantity: newQuantity } : item
+  //   ));
+  // };
 
   // Handle viewing item (optional functionality)
-  const handleViewItem = (id: number) => {
-    // You can implement the logic to view the item's details here
-    console.log(`View item with id: ${id}`);
-  };
+  // const handleViewItem = (id: number) => {
+  //   // You can implement the logic to view the item's details here
+  //   console.log(`View item with id: ${id}`);
+  // };
 
   return (
     <nav

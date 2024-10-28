@@ -28,7 +28,7 @@ const Blog12: React.FC = () => {
           <h5 className="font-medium text-sm text-gray-800 dark:text-neutral-200">Enhancement in Customer Engagement</h5>
           <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
             With the aim of optimizing customer interactions and boosting brand loyalty, the team at Preline leveraged
-            Mailchimp's powerful tools and expertise to deliver exceptional results.
+            Mailchimp&apos;s powerful tools and expertise to deliver exceptional results.
           </p>
           <p className="mt-1">
             <a

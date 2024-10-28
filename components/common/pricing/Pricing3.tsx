@@ -9,7 +9,7 @@ const Pricing3: React.FC = () => {
                 <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                     <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
                         <h2 className="text-3xl lg:text-4xl text-gray-800 font-bold dark:text-neutral-200">
-                            Solo, agency or team? We’ve got you covered.
+                            Solo, agency or team? We&apos;ve got you covered.
                         </h2>
                     </div>
 

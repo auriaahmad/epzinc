@@ -25,7 +25,7 @@ const Blog8: React.FC = () => {
               Preline becomes an official Instagram Marketing Partner
             </h3>
             <p className="mt-2 text-gray-600 dark:text-neutral-400">
-              Great news we're eager to share.
+              Great news we&apos;re eager to share.
             </p>
 
             <div className="mt-5 sm:mt-auto flex items-center">
